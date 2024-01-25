@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Water RABBIT</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale-1" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~bundles/modernizr")
+
+    <style>
+        body {
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #2f2f2f; /* Black Gray */
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .bg-1 {
+            background-color: #000000; /* Black */
+            color: #fff;
+        }
+
+        .container-fluid {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .margin {
+            margin-bottom: 45px;
+        }
+
+        /* unvisted link */
+        a:link {
+            color: white;
+            text-decoration: none;
+            font-size: 200%;
+        }
+
+        /* visited link */
+        a:visited {
+            color: white;
+            text-decoration: none;
+            font-size: 200%;
+        }
+
+        /* mouse over link */
+        a:hover {
+            color: lightblue;
+            text-decoration: none;
+            font-size: 200%;
+        }
+
+        /* selected link */
+        a:active {
+            color: white;
+            text-decoration: none;
+            font-size: 200%;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container-fluid bg-1 text-center">
+
+        @Html.ActionLink("Are you Thirsty?", "Index", "Home", new { @class = "margin" })
+
+        <video autoplay loop muted class="img-fluid" src="~/Images/WaterRabbitVideo.mp4"></video>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

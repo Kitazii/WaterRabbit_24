@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WaterRabbit_24.Models.Sound>
+
+@{
+    ViewBag.Title = "Sounds";
+}
+
+<script>
+    function pauseAll(element)
+    {
+        $("audio").not(element).each(function (index, audio) {
+            audio.pause();
+        });
+    }
+</script>
+
+<div class="container-fluid">
+    <h2 class="text-center">Water Sounds</h2>
+    <br />
+    <table id="dataTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Play Audio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        <audio controls onplay="pauseAll(this);">
+                            <source src="@Url.Content(item.FilePath)" type="audio/mp3" />
+                        </audio>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
